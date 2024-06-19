@@ -1,0 +1,2 @@
+# In this section we will play various things to practise our knowledge whatever we have learn't in this previous section 
+print("\t\t\t\tHello world \"You have been hacked\" \nDont call the cops otherwise your system will be halted and your privacy data will be leaked")
