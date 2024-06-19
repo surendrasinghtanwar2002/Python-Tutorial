@@ -4,6 +4,7 @@ b = "She is a good instructor as well as good teacher"
 c = 25
 d = 9252417421
 e = 25000.50
+f = 4+5j #complex datatypes
 Attendance = True
 PersonalDetails = None
 print("This is name so the datatype of name is", (type(a)))
@@ -13,4 +14,4 @@ print("This is mobileno so the datatype of mobileno is", (type(d)))
 print("This is salary of the Shradha Khapra so the datatype of salary will be", (type(e)))
 print("This is attendance of the Shradha Khapra so datatype will be", (type(Attendance)))
 print("This is Personal Details of the Shradha Khapra so Personal Details is avilable for public", (type(PersonalDetails)))
-
+print("THis is Personal code of the Shradha Khapra so what is the datatype lets find out", type(f))
