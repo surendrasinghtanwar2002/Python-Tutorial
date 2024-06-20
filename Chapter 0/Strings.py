@@ -110,5 +110,8 @@ print(text6[:5]) #If forgot to give starting index value so bydefault python wil
 text7= "Hello world How are you"
 print(text7[0:8])
 
-text8="hellow"
-print(len(text8), text8[0:-3])
+text9="hello"
+print(len(text9), text9[0:-3])
+#so basically when we denote a negative index value so it will add automatically a length function and
+#calculate the actual length of a text then it will subtract the given number from the length of the text
+# suppose we have hello of 5 length and i have given -3 then it will give 2 index value and output will be 0 & 1 index value only.
