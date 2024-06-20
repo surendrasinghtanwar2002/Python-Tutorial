@@ -91,4 +91,8 @@ print(text3.capitalize()) #As we can see we can also use all this function witho
 text4 ="my name is surendra singh tanwar" #word means the sentence which is being written after every space
 print(text4.title())
 
+#swapcase method: In this we swaps all the existing character that means it will convert the lowercase character to uppercase and uppercase to lowercase
+text5 = "mY nAME iS sURENDRA sINGH Tanwar"
+print(text5.swapcase())
+
 
