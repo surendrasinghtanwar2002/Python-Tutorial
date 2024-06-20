@@ -96,3 +96,19 @@ text5 = "mY nAME iS sURENDRA sINGH Tanwar"
 print(text5.swapcase())
 
 
+
+#Slicing method: This method is being used to find or portion of a string because each string have their indexing value and through the index value we can find their position
+# which means on which index which characters stands
+# For example hello its start with 0 and end with 4 so in this string e stand with 1 index so for finding that position 
+# python provide a method called slicing
+# To find any subsequneces from a sequence then we need only three paramter (start,stop,and step)
+text6= "Hello"
+print(text6[0:2]) #In this it will skip the index 2 value and give value of index 1
+print(text6[0:4])
+print(text6[:5]) #If forgot to give starting index value so bydefault python will allocate 0 index
+
+text7= "Hello world How are you"
+print(text7[0:8])
+
+text8="hellow"
+print(len(text8), text8[0:-3])
