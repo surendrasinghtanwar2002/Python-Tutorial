@@ -2,7 +2,7 @@
 #A string is a sequence of characters. In Python, you can create a string by enclosing text in single quotes ('), double quotes ("), or triple quotes (''' or """).
 
 
-#String is started with single quotes and double quotes
+#String is started with single quotes and double quotes & they are unmuttable
 #You can create strings using single quotes ('), 
 # double quotes ("), or triple quotes (''' or """):
 
@@ -114,4 +114,50 @@ text9="hello"
 print(len(text9), text9[0:-3])
 #so basically when we denote a negative index value so it will add automatically a length function and
 #calculate the actual length of a text then it will subtract the given number from the length of the text
-# suppose we have hello of 5 length and i have given -3 then it will give 2 index value and output will be 0 & 1 index value only.
+# suppose we have hello of 5 length and i have given -3 then it will give 2 index value and output will be 0 & 1 index value only & end value should be greater then start one
+text10= "Harry"
+print(text10[-3:-2])
+print(text10[-4:-3])
+print(text10[-2:-2])
+print(text10[-4:-2])
+print(text10[-3:-1])
+
+#rstrip method and this function will allow any trailing character like !@ such like that from the string from the right side and not effect on left side
+text11 = "!!!!Hello!!!!!!"
+print(text11.rstrip("!"))
+
+#replace method will allow to change the existing string with new string
+text12="HarryHarry"
+print(text12.replace("Harry","Surendra")) #In this we have to allocate first name with new name and this will change in this specific line only not the existing variable
+print(text12)
+
+#split method this will create the normal variable into list and for that we need a space in each word in the variable theny only it will create list
+text13="Harish Mohan Rohan"
+print(text13.split(" "))
+print(text13.split(" "))
+
+#center method this will center any text with given parameter and we can also check the space using length function
+text14="Welcome to our code"
+print(len(text14))
+print(len(text14.center(60)))
+
+#count method this will find any specific word in your existing variable
+text15="harry surendra harry surendra harry surendra"
+print(text15.count("harry"))
+
+#endswith() function it will check that our string is ending with specific string or value
+text16="Surendra singh tanwar"
+print(text16.endswith("tanwar"))
+
+text17 = "Hello harish how are you I am fine what about you!!!!"
+print(text17.endswith("!"))
+
+text18= "Welcome to the console !!!"
+print(text18.endswith("the",10,14)) # This method will basically check that the string from startind index to ending index and if it is exist then it will give us ture otherwise it will give us false
+
+#find() method or function which will find the first word from the existing string and give starting index value no
+text19 = "Welcome to hackerearth Mr Surendra Singh Tanwar"
+print(text19.find("to"))
+
+print(text19.find("tofff")) #If we check any wrong word then it will give -1 that mean the word which you are finding in the existing string is not avilable
+
