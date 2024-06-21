@@ -65,7 +65,7 @@ print(S[25])
 
 
                     #String Methods: Python provide many built in function for string manipulation
-#Length:- The length of a string can be obtained using the len() function:
+#len():- The length of a string can be obtained using the len() function:
 length = "Hello"
 print(len(length)) #In this we have learnt that the lenght function also calculate the space or extra space and add in the length
 
