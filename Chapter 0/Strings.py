@@ -187,3 +187,34 @@ print(text34.isprintable()) # this will give true because the string is printabl
 
 text35="Hy surendra \n How are you"
 print(text35.isprintable()) #this will give false because \n is not printable on the terminal
+
+# The isspace() method in Python is a string method used to check if all the characters in the string are whitespace characters. If the string contains only whitespace characters and at least one character, it returns True. Otherwise, it returns Falsetext36="  "
+text36="  "
+print(text36.isspace()) #give true
+
+text37= "  s  "
+print(text37.isspace()) #give false Contains non-whitespace characters
+
+text38 = " \t\n "
+print(text38.isspace()) #it will also give true because it is allocating space
+
+#istitle() method will check each word first letter is capital then it will give true otherwise false
+text39="Hello world"
+print(text39.istitle()) #give true because both word first letter is capital
+
+text40="Hy my name is Surendra"
+print(text40.istitle()) #It will give false because some of the word first letter are not capital
+
+#isupper() this method will check the entire string is in upper case or not  otherwise it will through the error
+text41="HELLO MY NAME IS SURENDRA"
+print(text41.isupper()) #give  true because entire string is in capital mode
+
+text42="HY my name IS SURENDRA SINGH TANWAR"
+print(text42.isupper()) #give false because  the entire string is not in capital mode 
+
+#startwith() method will check if existing string starting with some word or character then it will give true otherwise false
+text43="My name is Surendra Singh Tanwar"
+print(text43.startswith("My")) #give true because our string is being started with My
+
+text44="Hello world My name is Surendra Singh Tanwar"
+print(text44.startswith("Hello",0,5)) #This will also give true because we are checking this string pare from starting 0 index to 5 index
