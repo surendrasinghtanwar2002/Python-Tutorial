@@ -161,3 +161,29 @@ print(text19.find("to"))
 
 print(text19.find("tofff")) #If we check any wrong word then it will give -1 that mean the word which you are finding in the existing string is not avilable
 
+#index() method or function which will work simliar with find function but when we give those word from existing string find return -1 and index will through error that's it
+text20="Welcome Surendra to the Computer"
+# print(text20.index("Tanwar"))
+
+#isalnum() this method with check if existing string contain a-z,A-Z & 0-9 and if any special character are being used then it will throught out the error
+text21="HelloworldMynameisSurendra"
+print(text21.isalnum())
+
+#If we give space between the word then it will give us false because it treat the space as special character
+text22="Welcome back surendra"
+print(text22.isalnum())
+
+#isalpha() this method will check if existing string only contain a-z & A-Z no numerical, special and extra spaces 
+text32= "Welcomebackhowareyou"
+print(text32.isalpha())
+
+#islower () method will check that our string is being in lower case or not and if it is lower then it will give true otherwise false
+text33="welcome back surendra singh"
+print(text33.islower())
+
+#isprintable() method this will check and give us true if all the things which are given in the string are printable and if a single thing is not printable then it will through error
+text34="Hello world"
+print(text34.isprintable()) # this will give true because the string is printable
+
+text35="Hy surendra \n How are you"
+print(text35.isprintable()) #this will give false because \n is not printable on the terminal
