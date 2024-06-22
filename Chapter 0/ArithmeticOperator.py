@@ -38,6 +38,7 @@ modul = m%n
 print("Modulus of", m,"with",n,"is",modul)
 
 #Seventh operator is a floor division operator which is being used to divide the number but not printing value in floating value
+# result down to the nearest whole number
 o = 105
 p = 5
 floor = o//p
