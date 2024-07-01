@@ -10,6 +10,9 @@ my_dictionary={
  "Class": "Radhe",
  "Contact_no": "Bca"
 }
+
+##total of dictionary items
+total_item = len(my_dictionary)
 #Dictionary Menu with choice option
 secondheading = "Please choose your prefernce from below list ->"
 print(secondheading.center(50))
@@ -43,8 +46,8 @@ match thirdchoice:
     case 3:
         print(thirdchoice,"\noption selected")
         removing_item= int(input("Enter the items value to remove from the dictionary"))
-        for i in range(removing_item):
-             
+        for i in my_dictionary:
+            print(my_dictionary.items-removing_item)
             
     case 4:
         print("You have choosen Fourth option")
