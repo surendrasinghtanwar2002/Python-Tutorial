@@ -5,10 +5,10 @@ print(heading.center(180))
 
 #In this we will create our own dictionary with demo details
 my_dictionary={
-    "User_Name": "Demo",
-    "User_LastName": "Demo",
-    "User_Contact_no":123456798,
-    "User_Exist": False
+ "name": "Radhe",
+ "course": "Bca",
+ "Class": "Radhe",
+ "Contact_no": "Bca"
 }
 #Dictionary Menu with choice option
 secondheading = "Please choose your prefernce from below list ->"
@@ -23,15 +23,29 @@ thirdchoice = int(input("\nEnter Your Choice from (1-5): ").center(40))
 
 #Match Case Statement implementing in the dictionary to make menu working
 match thirdchoice:
-    case 1:
-        print("You have choosen first option")
     
+    case 1:
+        print(thirdchoice,"option selected")
+        if (len(my_dictionary)==0):
+            print(("!!! Your dictionary is empty !!!").center(80))
+        else:
+            print(my_dictionary.items())
+
     case 2:
-        print("You have choosen second option")
+        print(thirdchoice,"\noption selected")
+        adding_item=int(input("\nEnter the items values to add in the dictionary: "))
+        for i in range(adding_item):
+            key= (input("Enter your key name: "))
+            value = (input("Enter your value: "))
+            my_dictionary[key]=value
+        print("Your updated dictionary is", my_dictionary.values())
 
     case 3:
-        print("You have choosen third option")
-    
+        print(thirdchoice,"\noption selected")
+        removing_item= int(input("Enter the items value to remove from the dictionary"))
+        for i in range(removing_item):
+             
+            
     case 4:
         print("You have choosen Fourth option")
 
