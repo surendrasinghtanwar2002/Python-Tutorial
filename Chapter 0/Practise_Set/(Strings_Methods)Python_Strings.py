@@ -19,7 +19,7 @@ print(fourth_char.casefold()) #output tony stark
 
 #(3) Lower() method will convert string into lower case
 fifth_char = "SURENDRA SINGH TANWAR"
-sixth_char = "VIKRAM SINGH TANWAR"
+sixth_char = "VIKRAM SINGH TANWAR" 
 print(fifth_char.lower()) #output surendra singh tanwar
 print(sixth_char.lower()) #output vikram singh tanwar
 
