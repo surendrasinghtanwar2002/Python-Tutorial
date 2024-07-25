@@ -24,7 +24,7 @@ def discountvalidation(* token_no):
                 return min_final_amount
         else:
             if bill_value not in bill_no:
-                print(f"Your given bill no {bill_no} is not valid. Please try again later")
+                print(f"Your given bill no {bill_value} is not valid. Please try again later")
             else:
                 print(f"Your amount is not right please check it again {amount_value}")
                 return None
