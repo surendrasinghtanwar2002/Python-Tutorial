@@ -29,7 +29,7 @@ try:
         ##checking condition either the user input is right or not
     
         ##first condition checking
-        if userinput <=0:
+        if userinput <=0 or userinput >4:
             print("Please Choose the correct option")
             pass
             
