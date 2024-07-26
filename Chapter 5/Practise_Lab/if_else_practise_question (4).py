@@ -1,7 +1,7 @@
 ##taking user input from the and calculating its discount
 
 
-##predefined bill no list to validate
+##predefined bill no list to validate   
 bill_no = ([x*2 for x in range(10000)])
 
 
