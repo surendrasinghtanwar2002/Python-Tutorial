@@ -43,8 +43,10 @@ try:
             user_value = (input("\n Do you want to continue or quit: "))
             if user_value == "q" and user_value == "Q":
                 break 
-            else:
+            elif user_value != "q" and user_value =="Q":
                 print("Please choose correct option")
+            else:
+                break
                        
         ##third condition checking
         elif userinput == 2:
