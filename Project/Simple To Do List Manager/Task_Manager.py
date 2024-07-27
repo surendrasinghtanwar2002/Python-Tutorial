@@ -18,7 +18,7 @@ def welcomefunction():
     print(welcome_message)
     return welcome_message
 
-##Taking user credentaisl for login
+##Login and signup function
 def existing_user ():
     sleep(2)
     os.system("clear")
