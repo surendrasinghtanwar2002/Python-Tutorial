@@ -3,7 +3,6 @@
 import os
 from time import sleep
 
-
 ##predefined list for the book
 library_books = {"Code with C++": "2 Pieces"},{"C++":"Harish Kumar"},{"Oops With Java":"Jameson"}
 
@@ -15,14 +14,15 @@ user_details_list = {"admin": "admin@123","user":"user@123","user2":"user@!23"}
 
 ##welcome message function
 def welcomefunction():
-    sleep(2)                     
-    os.system('clear')   
     welcome_message = " Library Management System ".center(125,"*")
     print(welcome_message)
     return welcome_message
 
 ##Taking user credentaisl for login
 def existing_user ():
+    sleep(2)
+    os.system("clear")
+    welcomefunction()
     create_login = str(input("Enter your username: "))
     create_password = str(input("Enter your password: "))
     if create_login in user_details_list and user_details_list[create_login] == create_password:
@@ -39,7 +39,6 @@ def existing_user ():
         else:
             print("Your data have not been updated due to some technical issue")
             return False
-
 
 result = existing_user()
  ##  Main Menu Looping through the list##
