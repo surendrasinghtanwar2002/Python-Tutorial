@@ -18,6 +18,12 @@ def welcomefunction():
     print(welcome_message)
     return welcome_message
 
+##end message function
+def endmessagefunction():
+    end_message = " Thank you for visiting in our library Visit Again ".center(120,"*")
+    print(end_message)
+    return end_message
+
 ##Main menu function
 def main_menu():
     main_menu = ["Add a new Book","View all books","Borrow a book","Return a book","Exit"]
@@ -27,7 +33,7 @@ def main_menu():
         return result
 
 
-##Login and signup function
+##Login validation function
 def existing_user ():
     sleep(2)
     os.system("clear")
@@ -35,22 +41,23 @@ def existing_user ():
     create_login = str(input("Enter your username: "))
     create_password = str(input("Enter your password: "))
     if create_login in user_details_list and user_details_list[create_login] == create_password:
+        sleep(3)
         print("Access Granted")
         return True
-    elif create_login and create_password not in user_details_list:
-        print("Your data is not in our database:")
+    else:
         if create_login and create_password not in user_details_list:
-            join_login= input("Enter your New username: ")
-            join_password = input("Enter your New password: ")
-            user_details_list.update(join_login,join_password)
-            sleep(2)
-            print("Your data have been updated")
-        else:
-            print("Your data have not been updated due to some technical issue")
-            return False
+            sleep(3)
+            print("Your data is not in our database:")
+            return None
+
+##signup validation function
+def new_user():
+    print("New user will being added here")
+
 
 result = existing_user()
- ##  Main Menu Looping through the list##
+  
+##  Main Menu Looping through the list##
 if result != None:
     sleep(2)
     os.system("clear")
@@ -124,7 +131,7 @@ if result != None:
             print(end_message.center(125,"*"))
         ##Loop over 
 else:
-    print("Can't proceed without the proper user credentials")
+    endmessagefunction()
 
 ##While Loop
 
