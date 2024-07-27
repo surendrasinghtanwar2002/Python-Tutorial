@@ -2,6 +2,7 @@
 ##Importing modules
 import os
 from time import sleep
+import getpass
 
 ##predefined list for the book
 library_books = {"Code with C++": "2 Pieces"},{"C++":"Harish Kumar"},{"Oops With Java":"Jameson"}
@@ -38,8 +39,8 @@ def existing_user ():
     sleep(2)
     os.system("clear")
     welcomefunction()
-    create_login = str(input("Enter your username: "))
-    create_password = str(input("Enter your password: "))
+    create_login = (input("Enter your username: "))
+    create_password = getpass.getpass('Enter your password: ')
     if create_login in user_details_list and user_details_list[create_login] == create_password:
         sleep(3)
         print("Access Granted")
@@ -52,7 +53,10 @@ def existing_user ():
 
 ##signup validation function
 def new_user():
-    print("New user will being added here")
+    new_user = input("Enter your New username: ")
+    new_user_password = input("Enter your password: ")
+    if new_user in user_details_list and user_details_list[new_user] != new_user_password:
+            print("Yes you can create new user because this data is not presented in our database")
 
 
 result = existing_user()
