@@ -6,34 +6,70 @@ from time import sleep
 ##Banner of the Library Management System
 sleep(2)                        ##Sleep function
 os.system('clear')              ## It will clear previous data from the console
-welcome_message = " Library Management System "
-print(welcome_message.center(125,"*"))
+
+
+##welcome message function
+def welcomefunction():
+    welcome_message = " Library Management System ".center(125,"*")
+    print(welcome_message)
+    return welcome_message
 
 
 ##predefined list for the book
-library_books = [{"Code with C++": "2 Pieces"},{"C++":"Harish Kumar"},{"Oops With Java":"Jameson"}]
-
-##  Main Menu Looping through the list##
-main_menu = ["Add a new Book","View all books","Borrow a book","Return a book","Exit"]
-for index_menu, menu_list in enumerate(main_menu, start= 1):
-    print(index_menu, menu_list)  
+library_books = {"Code with C++": "2 Pieces"},{"C++":"Harish Kumar"},{"Oops With Java":"Jameson"}
 
 ## Add Book Menu through the list:
 Add_Book_Menu = ["Add a Book", "View Books", "Remove Books","Exit"]
 
+##user details predefined
+user_details_list = {"admin": "admin@123","user":"user@123","user2":"user@!23"}
 
-##While Loop
-while True:
-    user_input = int(input("Enter your choice from the above list: "))
-    ##choice 1 from the list
-    if user_input == 1:
-        user_add_choice = input("Press \"Y\" to continue and \"N\" to exit: ")
+##Making a function to validate user is right or not
+
+     
+##Taking user credentaisl for login
+def existing_user ():
+    create_login = str(input("Enter your username: "))
+    create_password = str(input("Enter your password: "))
+    if create_login in user_details_list and user_details_list[create_login] == create_password:
+        print("Access Granted")
+        return True
+    elif create_login and create_password not in user_details_list:
+        print("Your data is not in our database:")
+        if create_login and create_password not in user_details_list:
+            join_login= input("Enter your New username: ")
+            join_password = input("Enter your New password: ")
+            user_details_list.update(join_login,join_password)
+            sleep(2)
+            print("Your data have been updated")
+        else:
+            print("Your data have not been updated due to some technical issue")
+            return False
+##calling function for validating user
+
+
+result = existing_user()
+ ##  Main Menu Looping through the list##
+if result != None:
+    sleep(2)
+    os.system("clear")
+    welcomefunction() ##calling a welcome function here
+    main_menu = ["Add a new Book","View all books","Borrow a book","Return a book","Exit"]
+    for index_menu, menu_list in enumerate(main_menu, start= 1):
+        print(index_menu, menu_list)
+    while True:
+        user_input = int(input("Enter your choice from the above list: "))
+    ##Main screen option from the list
+        if user_input == 1:
+            user_add_choice = input("Press \"Y\" to continue and \"N\" to exit: ")
+        ##Add Book menu scree start -------------------->
         if user_add_choice == "Y" or "y":
             sleep(1)
             os.system("clear")
             for index,bookmenu in enumerate(Add_Book_Menu,start=1):
                 print(index,bookmenu)
             addbookmenu = int(input("\n Enter your choice from the above list: "))
+            ##Add book menu first option start --------------------->
             if addbookmenu == 1:
                 sleep(2)
                 os.system("clear")
@@ -55,15 +91,23 @@ while True:
                     else:
                         pass
                     i+=1
-                break  
+                break
+            ##Add Book menu first option end !!!!!!!!!!!!!!!!!!!!
+
+            ##Add Book menu second option start ----------------------->
             elif addbookmenu == 2:
                 os.system('clear')
                 sleep(1)
                 for book_sequence,book_names in enumerate(library_books,start=1):                           ##working here
                    print(book_sequence, book_names)
                 break
+            ##Add Book menu second option end --------------------------->
+
+            ##Add Book menu third option start ------------------------>
             elif addbookmenu == 3:
                 print("We will remove the book after some circumstances")
+
+            ##Add Book menu second option end ------------------------->
             elif addbookmenu == 4:
                 user_exit_choice = input("Please Press \"Q\" for Quit and \"N\" for cancel this task")
                 if user_exit_choice == "q" or "Q":
@@ -71,28 +115,17 @@ while True:
                 break
         else:
             print("We are putting you back to our main menu list = ")
-            sleep(1)
-            break
-    ## choice 2 from the list
-    elif user_input == 2:
-        print("You want to view all the book")
-    ## choice 3 from the list
-    elif user_input == 3:
-        print("You want to Borrow a book")
-    ## choice 4 from the list
-    elif user_input == 4:
-        print("You want to return a book")
-    ##choice 5 from the list
-    elif user_input == 5:
-        user_exit_choice = (input("You want to exit \"Q\" for quit and \"N\" for return to the menu = "))
-        if user_exit_choice == "q" or "Q":
-            pass
-        break
+            sleep(2)
+            os.system('clear')
+            end_message = " Thank you Visit Again "
+            print(end_message.center(125,"*"))
+        ##Loop over 
+else:
+    print("Can't proceed without the proper user credentials")
 
-##Loop over
-sleep(2)
-os.system('clear')
-end_message = " Thank you Visit Again "
-print(end_message.center(125,"*"))
+##While Loop
+
+
+
 
 
