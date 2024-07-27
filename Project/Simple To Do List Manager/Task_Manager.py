@@ -1,18 +1,7 @@
-                                            ##Library Management System
+                                                                                                ## Library Management System ##
 ##Importing modules
 import os
 from time import sleep
-
-##Banner of the Library Management System
-sleep(2)                        ##Sleep function
-os.system('clear')              ## It will clear previous data from the console
-
-
-##welcome message function
-def welcomefunction():
-    welcome_message = " Library Management System ".center(125,"*")
-    print(welcome_message)
-    return welcome_message
 
 
 ##predefined list for the book
@@ -24,9 +13,14 @@ Add_Book_Menu = ["Add a Book", "View Books", "Remove Books","Exit"]
 ##user details predefined
 user_details_list = {"admin": "admin@123","user":"user@123","user2":"user@!23"}
 
-##Making a function to validate user is right or not
+##welcome message function
+def welcomefunction():
+    sleep(2)                     
+    os.system('clear')   
+    welcome_message = " Library Management System ".center(125,"*")
+    print(welcome_message)
+    return welcome_message
 
-     
 ##Taking user credentaisl for login
 def existing_user ():
     create_login = str(input("Enter your username: "))
@@ -45,7 +39,6 @@ def existing_user ():
         else:
             print("Your data have not been updated due to some technical issue")
             return False
-##calling function for validating user
 
 
 result = existing_user()
