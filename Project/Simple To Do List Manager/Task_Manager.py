@@ -11,12 +11,12 @@ print(welcome_message.center(125,"*"))
 
 
 ##predefined list for the book
-library_books = [{"Code with C++": "2 Pieces"}]
+library_books = [{"Code with C++": "2 Pieces"},{"C++":"Harish Kumar"},{"Oops With Java":"Jameson"}]
 
 ##  Main Menu Looping through the list##
 main_menu = ["Add a new Book","View all books","Borrow a book","Return a book","Exit"]
 for index_menu, menu_list in enumerate(main_menu, start= 1):
-    print(index_menu, menu_list,":")  
+    print(index_menu, menu_list)  
 
 ## Add Book Menu through the list:
 Add_Book_Menu = ["Add a Book", "View Books", "Remove Books","Exit"]
@@ -37,22 +37,31 @@ while True:
             if addbookmenu == 1:
                 sleep(2)
                 os.system("clear")
+                welcome_message1 = " Library Add Book Section "
+                print(welcome_message1.center(125,"*"))
                 i=0
                 user_book_length = int(input("Enter number of book you have to add (Max 5): ") or 5) 
                 while i < user_book_length:
                     book__name = input("Enter your book name = ")
                     book_author_name = input("Enter your book author name: ")
-                    if user_input and book_author_name not in library_books:
+                    if book__name and book_author_name not in library_books:
                         library_books.append({book__name,book_author_name})
                         sleep(2)
                         print("Your book have been added to our database")
                         sleep(1)
                         os.system("clear")
+                    elif  book__name and book_author_name in library_books:
+                            print("Please Choose correct option: ")
+                    else:
+                        pass
                     i+=1
-                    
-                   
+                break  
             elif addbookmenu == 2:
-                print("We will start this service soon")
+                os.system('clear')
+                sleep(1)
+                for book_sequence,book_names in enumerate(library_books,start=1):                           ##working here
+                   print(book_sequence, book_names)
+                break
             elif addbookmenu == 3:
                 print("We will remove the book after some circumstances")
             elif addbookmenu == 4:
