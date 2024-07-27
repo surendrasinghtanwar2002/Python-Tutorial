@@ -18,6 +18,15 @@ def welcomefunction():
     print(welcome_message)
     return welcome_message
 
+##Main menu function
+def main_menu():
+    main_menu = ["Add a new Book","View all books","Borrow a book","Return a book","Exit"]
+    for index_menu, menu_list in enumerate(main_menu, start= 1):
+        print(index_menu,menu_list)
+        result = (index_menu,menu_list)
+        return result
+
+
 ##Login and signup function
 def existing_user ():
     sleep(2)
@@ -46,9 +55,11 @@ if result != None:
     sleep(2)
     os.system("clear")
     welcomefunction() ##calling a welcome function here
-    main_menu = ["Add a new Book","View all books","Borrow a book","Return a book","Exit"]
-    for index_menu, menu_list in enumerate(main_menu, start= 1):
-        print(index_menu, menu_list)
+
+    ##main screen function will call here                           ~~~~~~~~~~~~~~~~~~~~~
+    main_menu()
+    ##main screen fuction will run here                             ~~~~~~~~~~~~~~~~~~~~~
+
     while True:
         user_input = int(input("Enter your choice from the above list: "))
     ##Main screen option from the list
