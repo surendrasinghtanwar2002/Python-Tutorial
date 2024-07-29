@@ -26,13 +26,13 @@ def endmessagefunction():
     return end_message
 
 ##Main menu function
-def main_menu():
-    main_menu = ["Add a new Book","View all books","Borrow a book","Return a book","Exit"]
-    for index_menu, menu_list in enumerate(main_menu, start= 1):
-        print(index_menu,menu_list)
-        result = (index_menu,menu_list)
-        return result
+def main_menu(*items_list):
+    for menu_list in items_list:
+        return  menu_list
 
+##calling function and passing the attributes
+home_menu_item = ["Add a new Book","View all books","Borrow a book","Return a book","Exit"]
+menu_result = main_menu(home_menu_item)
 
 ##Login validation function
 def existing_user ():
@@ -68,7 +68,7 @@ if result != None:
     welcomefunction() ##calling a welcome function here
 
     ##main screen function will call here                           ~~~~~~~~~~~~~~~~~~~~~
-    main_menu()
+    print(menu_result)
     ##main screen fuction will run here                             ~~~~~~~~~~~~~~~~~~~~~
 
     while True:
