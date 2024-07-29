@@ -1,8 +1,7 @@
                                 ##Python File Handling##
 
- ## Basic File handling method ##
+ ## Open method in File handling ##
 
-#Open() method to open the file and read method to print entire content in the file
 
 #Approach 1
 file_handler = open("Chapter_6/File_Handling_Files/ip_Adddress.txt") 
@@ -36,3 +35,10 @@ with open("Chapter_6/File_Handling_Files/ios_logs.txt", mode="w") as file_hanlde
 
 with open("Chapter_6/File_Handling_Files/ios_logs.txt", mode="r") as file_hanlder4_return:
     print(file_hanlder4_return.read())
+
+##Approach 4 (append mode) (Existing file) , It will add a new line in existing file at the end
+with open("/Users/surendrasingh/Documents/Python-Tutorial/Chapter_6/File_Handling_Files/temp_file.txt", mode="a") as file_handler_5:
+    file_handler_5.write("\n no please revert it ")
+
+with open("/Users/surendrasingh/Documents/Python-Tutorial/Chapter_6/File_Handling_Files/temp_file.txt", mode="r") as file_hanlder_5_reusable:
+    print(file_hanlder_5_reusable.read())
