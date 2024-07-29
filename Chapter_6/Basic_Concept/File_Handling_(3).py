@@ -34,4 +34,5 @@ with open("/Users/surendrasingh/Documents/Python-Tutorial/Chapter_6/File_Handlin
 
 
 
-
+mylist = [10,20,30,40,50,60,70]
+help(mylist.append)
