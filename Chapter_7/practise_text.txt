@@ -5,6 +5,8 @@ Here are some email addresses:
 - jane_smith@domain.co.uk
 - admin123@website.org
 
+my name is surendra singh tanwar
+
 gfdsjg;sdjgklsdfgjsdklgjsdlkgjsdflkgjsdfkl;gjsdl;gjsdfl;jlkgsjdfgklsdjflgjsdfgklsdjfgklsdfjgklsdfjglk;sdfjgklj
 
 Some URLs to consider:
@@ -18,6 +20,8 @@ Phone numbers in various formats:
 - 555.123.4567
 - +1-555-123-4567
 - +44 20 7946 0958
+
+Hello, World! Welcome to the regex testing sample. 
 
 Dates in different formats:
 - 2024-08-22
@@ -34,12 +38,16 @@ Mixed content with special characters:
 - @username
 - #hashtag
 
+Hello, World! Welcome to the regex testing sample. 
+
 Some hexadecimal and binary numbers:
 - 0x1A3F
 - 0b1101
 - 255
 - 0xFF
 - 0b10101010
+
+Hello, World! Welcome to the regex testing sample. 
 
 Scientific notation and mathematical expressions:
 - 3.14e+10
@@ -87,3 +95,4 @@ Mixed alphanumeric sequences:
 - 0987zyxWVU
 
 This sample text provides a wide range of content that includes special characters, punctuation, different data formats, and a mix of textual and numerical data. It should be useful for testing various regular expressions.
+WORLD
