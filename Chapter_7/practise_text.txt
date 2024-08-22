@@ -94,5 +94,4 @@ Mixed alphanumeric sequences:
 - 123abcXYZ
 - 0987zyxWVU
 
-This sample text provides a wide range of content that includes special characters, punctuation, different data formats, and a mix of textual and numerical data. It should be useful for testing various regular expressions.
-WORLD
+This sample text provides a wide range of content that includes special characters, punctuation, different data formats, and a mix of textual and numerical data. It should be useful for testing various regular expressions WORLD
