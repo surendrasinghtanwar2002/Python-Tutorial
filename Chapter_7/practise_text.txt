@@ -1,0 +1,89 @@
+Hello, World! Welcome to the regex testing sample. 
+
+Here are some email addresses:
+- john.doe@example.com
+- jane_smith@domain.co.uk
+- admin123@website.org
+
+gfdsjg;sdjgklsdfgjsdklgjsdlkgjsdflkgjsdfkl;gjsdl;gjsdfl;jlkgsjdfgklsdjflgjsdfgklsdjfgklsdfjgklsdfjglk;sdfjgklj
+
+Some URLs to consider:
+- https://www.example.com
+- http://subdomain.example.net/path/to/resource?query=123&sort=asc
+- ftp://ftp.example.com/file.txt
+
+Phone numbers in various formats:
+- (555) 123-4567
+- 555-123-4567
+- 555.123.4567
+- +1-555-123-4567
+- +44 20 7946 0958
+
+Dates in different formats:
+- 2024-08-22
+- 22/08/2024
+- August 22, 2024
+- 08/22/2024
+
+Mixed content with special characters:
+- $100.50
+- €75,00
+- £40.99
+- 1,000.00
+- (123) 456-7890
+- @username
+- #hashtag
+
+Some hexadecimal and binary numbers:
+- 0x1A3F
+- 0b1101
+- 255
+- 0xFF
+- 0b10101010
+
+Scientific notation and mathematical expressions:
+- 3.14e+10
+- 1.23E-4
+- 5*(3+2)
+- (2+3) * (7-4)
+- 3.14 * r^2
+
+JSON-like data structure:
+{
+  "name": "Alice",
+  "age": 30,
+  "email": "alice@example.com",
+  "is_verified": true,
+  "scores": [85, 92, 78],
+  "address": {
+    "street": "123 Elm St",
+    "city": "Springfield",
+    "zip": "62701"
+  }
+}
+
+Some Unicode characters and emojis:
+- 🌟✨🔥
+- 你好 (Hello in Chinese)
+- привет (Hello in Russian)
+- 🚀💡🎉
+
+HTML-like tags and attributes:
+- <div class="container">Content</div>
+- <a href="https://example.com">Link</a>
+- <img src="image.jpg" alt="Description">
+- <input type="text" id="username" value="guest">
+
+Various special characters:
+- !@#$%^&*()_+-=[]{},.<>?/\|`~
+- “double quotes”
+- ‘single quotes’
+- ʕ•ᴥ•ʔ
+- 𝒜𝒷𝒸
+
+Mixed alphanumeric sequences:
+- a1b2C3d4E5f6G7
+- 123abcXYZ
+- 0987zyxWVU
+
+This sample text provides a wide range of content that includes special characters, punctuation, different data formats, and a mix of textual and numerical data. It should be useful for testing various regular expressions.
