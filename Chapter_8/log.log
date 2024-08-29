@@ -1,0 +1,13 @@
+2024-08-29 15:52:22,705 - root- INFO - The value of x is 2
+2024-08-29 15:52:22,711 - root- ERROR - Zero devision error
+Traceback (most recent call last):
+  File "e:\Python-Tutorial\Chapter_8\logging_practise.py", line 15, in <module>
+    1 / 0
+    ~~^~~
+ZeroDivisionError: division by zero
+2024-08-29 15:52:22,715 - root- ERROR - Zero devision error
+Traceback (most recent call last):
+  File "e:\Python-Tutorial\Chapter_8\logging_practise.py", line 22, in <module>
+    1/0
+    ~^~
+ZeroDivisionError: division by zero
