@@ -16,6 +16,7 @@ mylogger = logging.getLogger("MyCustomLogger")
 #(4) after creating the formatter simply add that formater in the handler
 #(5) after creating all this simply add handler in the custom logger object
 
+
 handler = logging.FileHandler('mycustomlogger.log')
 formattter = logging.Formatter("%(asctime)s -%(name)s - %(levelname)-s - %(message)s")
 handler.setFormatter(formattter)

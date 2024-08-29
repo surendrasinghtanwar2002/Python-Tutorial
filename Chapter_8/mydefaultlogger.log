@@ -1,2 +1,0 @@
-2024-08-29 16:10:33,784 -MyCustomLogger - INFO - This is my custom logger which is made for my script
-2024-08-29 16:10:33,784 -root - INFO - This is the root logger which iss provided by logging module itself
