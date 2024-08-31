@@ -1,0 +1,59 @@
+{
+    "DEVICES": [
+        {
+            "HOSTNAME": "AS-PAR001",
+            "REGION": "EUROPE",
+            "CITY": "PARIS",
+            "DEVICE_ROLE": "ACCESS SW",
+            "MGMT_INTERFACE": "VLAN100",
+            "IOS_VER": "15.0",
+            "L100_IP": "10.10.10.1"
+        },
+        {
+            "HOSTNAME": "DS-MEX002",
+            "REGION": "AMERICA",
+            "CITY": "MEXICO",
+            "DEVICE_ROLE": "DISTRIBUTION SW",
+            "MGMT_INTERFACE": "VLAN100",
+            "IOS_VER": "12.1",
+            "L100_IP": "10.20.20.2"
+        },
+        {
+            "HOSTNAME": "CS-DEL001",
+            "REGION": "APAC",
+            "CITY": "DELHI",
+            "DEVICE_ROLE": "CORE SW",
+            "MGMT_INTERFACE": "VLAN100",
+            "IOS_VER": "15.4",
+            "L100_IP": "10.30.30.3"
+        },
+        {
+            "HOSTNAME": "AS-2",
+            "REGION": "EUROPE",
+            "CITY": "PARIS",
+            "DEVICE_ROLE": "ACCESS SW",
+            "MGMT_INTERFACE": "VLAN100",
+            "IOS_VER": "15.0",
+            "L100_IP": "10.10.10.1"
+        },
+        {
+            "HOSTNAME": "DS-2",
+            "REGION": "AMERICA",
+            "CITY": "MEXICO",
+            "DEVICE_ROLE": "DISTRIBUTION SW",
+            "MGMT_INTERFACE": "VLAN100",
+            "IOS_VER": "12.1",
+            "L100_IP": "10.20.20.2"
+        },
+        {
+            "HOSTNAME": "CS-2",
+            "REGION": "APAC",
+            "CITY": "DELHI",
+            "DEVICE_ROLE": "CORE SW",
+            "MGMT_INTERFACE": "VLAN100",
+            "IOS_VER": "15.4",
+            "L100_IP": "10.30.30.3"
+        }
+    ]
+    
+}
