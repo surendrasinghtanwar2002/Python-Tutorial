@@ -103,30 +103,87 @@
 
 
 
-##Practise 4
-##Creating the parent class
-class Transport:
-    def __init__(self, transport_brand, vehicle_type):
-        self.transport_brand = transport_brand
-        self.vehicle_type = vehicle_type
+# ##Practise 4
+# # ##Creating the parent class
+# class Transport:
+#     def __init__(self, transport_brand, vehicle_type):
+#         self.transport_brand = transport_brand
+#         self.vehicle_type = vehicle_type
     
-    def transport_info(self):
-        return f"Transport Brand: {self.transport_brand}, Vehicle Type: {self.vehicle_type}"
+#     def transport_info(self):
+#         return f"Transport Brand: {self.transport_brand}, Vehicle Type: {self.vehicle_type}"
 
 ##Creating another class or subclass which will inherit the functionalities from the parent class
-class Car(Transport):
-    def __init__(self, car_name, car_color, car_year):
-        # Using super() to call the parent class constructor to initialize parent class attributes
-        super().__init__(car_name, car_color)  # Initializes attributes from Transport class
-        # Attribute specific to the Car class
-        self.car_year = car_year  
+# class Car(Transport):
+#     def __init__(self, car_name, car_color, car_year):
+#         # Using super() to call the parent class constructor to initialize parent class attributes
+#         super().__init__(car_name, car_color)  # Initializes attributes from Transport class
+#         # Attribute specific to the Car class
+#         self.car_year = car_year  
     
-    def car_info(self):
-        return f"{super().transport_info()}, Car Manufacture Year: {self.car_year}"
+#     def car_info(self):
+#         return f"{super().transport_info()}, Car Manufacture Year: {self.car_year}"
 
-# Creating an instance of the Car class
-my_car = Car("Toyota", "Sedan", 2020)
+# # Creating an instance of the Car class
+# my_car = Car("Toyota", "Sedan", 2020)
 
-# Displaying information
-print(my_car.transport_info()) 
-print(my_car.car_info())  
+# # Displaying information
+# print(my_car.transport_info()) 
+# print(my_car.car_info())  
+
+                                                                    ## Practise 5 ##
+##Parent Class
+# class Transport:
+#     def __init__(self,manufacturer,engine_type) -> None:
+#         self.manufacturer = manufacturer
+#         self.engine_type = engine_type
+    
+#     # @staticmethod               ##iT WILL BE DECORATER WHICH NOT REQUIRED ANY DETAILS
+#     def transport_info(self):
+#         return f"This is the Transportation service your manufactures is:- '{self.manufacturer}' and your engine type is '{self.engine_type}'"
+
+# #Child Class
+# class car(Transport):
+#     def __init__(self,manuf,types,year) -> None:            ##Constructor
+#         super().__init__(manuf,types)                       ##Here we are using the parent constructor attributes
+#         self.year = year
+        
+#     def car_dispaly(self):
+#         return f"->>>>>>>>>>{super().transport_info()} Manufacturer Year '{self.year}' "
+    
+
+# ##creating the object for the class
+# Fortuner = car("Toyota","Deisel",2024)
+
+# ##printing the methods of the car class (Child Class)
+# print(Fortuner.car_dispaly())
+
+# ##printing the methods of the transport (Parent Class)
+# print(Fortuner.transport_info())
+
+
+                                                                    ## Practise 5 ##
+##Primary class
+class Animal:
+    def eats(self):
+        print("I can eat")
+
+##Secondary Class
+class dog(Animal):
+    
+    ##method for the object
+    def eat(self):
+        super().eats()
+        print("I like to eat bones")
+
+labrador = dog() ##creating an object of the subclases
+
+labrador.eat()
+
+
+
+        
+        
+
+        
+
