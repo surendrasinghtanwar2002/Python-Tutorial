@@ -66,37 +66,67 @@
 # print(student.display())
 
 
-##Practise 3 
-class Carmanufacture:               ##Parent Classs
-    def __init__(self) -> None:         ##Here i have created a constructor
-        self.carsize = "15foot"
-        self.carwindshield = True
-        self.cartire = "15*4"
+# ##Practise 3 
+# class Carmanufacture:               ##Parent Classs
+#     def __init__(self) -> None:         ##Here i have created a constructor
+#         self.carsize = "15foot"
+#         self.carwindshield = True
+#         self.cartire = "15*4"
 
-    def assamblingdetails(self):
-        return f"First paint the car then only you can continue with another process"
+#     def assamblingdetails(self):
+#         return f"First paint the car then only you can continue with another process"
 
-class Toyota(Carmanufacture):           ##Sub Class for the toyota Brand (Inheritance Level 1)
+# class Toyota(Carmanufacture):           ##Sub Class for the toyota Brand (Inheritance Level 1)
 
-    def __init__(self,modelname) -> None:
-        super().__init__()
-        self.modelname = modelname
+#     def __init__(self,modelname) -> None:
+#         super().__init__()
+#         self.modelname = modelname
 
 
-class Fortuner(Toyota):             ##Sub Class for the Fortuner model (Inheritance Level 2)
-    def __init__(self,modelname,color,size,price) -> None:
-        super().__init__(modelname)
-        self.color = color
-        self.size = size
-        self.price = price
+# class Fortuner(Toyota):             ##Sub Class for the Fortuner model (Inheritance Level 2)
+#     def __init__(self,modelname,color,size,price) -> None:
+#         super().__init__(modelname)
+#         self.color = color
+#         self.size = size
+#         self.price = price
     
-    ##Creating a method for the class
-    def display(self):
-        return f"This is your entire details of the fortuner car {self.color} {self.size} {self.price}" 
+#     ##Creating a method for the class
+#     def display(self):
+#         return f"This is your entire details of the fortuner car {self.color} {self.size} {self.price}" 
 
 
-car1 = Fortuner("Fortuner","black",15,15000000)
+# car1 = Fortuner("Fortuner","black",15,15000000)
 
-print(car1.assamblingdetails())     ##Calling the class from the above item
+# print(car1.assamblingdetails())     ##Calling the class from the above item
 
-print(car1.display())
+# print(car1.display())
+
+
+
+##Practise 4
+##Creating the parent class
+class Transport:
+    def __init__(self, transport_brand, vehicle_type):
+        self.transport_brand = transport_brand
+        self.vehicle_type = vehicle_type
+    
+    def transport_info(self):
+        return f"Transport Brand: {self.transport_brand}, Vehicle Type: {self.vehicle_type}"
+
+##Creating another class or subclass which will inherit the functionalities from the parent class
+class Car(Transport):
+    def __init__(self, car_name, car_color, car_year):
+        # Using super() to call the parent class constructor to initialize parent class attributes
+        super().__init__(car_name, car_color)  # Initializes attributes from Transport class
+        # Attribute specific to the Car class
+        self.car_year = car_year  
+    
+    def car_info(self):
+        return f"{super().transport_info()}, Car Manufacture Year: {self.car_year}"
+
+# Creating an instance of the Car class
+my_car = Car("Toyota", "Sedan", 2020)
+
+# Displaying information
+print(my_car.transport_info()) 
+print(my_car.car_info())  
