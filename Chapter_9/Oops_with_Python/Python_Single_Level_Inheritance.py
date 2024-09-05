@@ -131,25 +131,25 @@
 # print(my_car.transport_info()) 
 # print(my_car.car_info())  
 
-                                                                    ## Practise 5 ##
-##Parent Class
-# class Transport:
-#     def __init__(self,manufacturer,engine_type) -> None:
-#         self.manufacturer = manufacturer
-#         self.engine_type = engine_type
+                                                                    # Practise 5 ##
+#Parent Class
+class Transport:
+    def __init__(self,manufacturer,engine_type) -> None:
+        self.manufacturer = manufacturer
+        self.engine_type = engine_type
     
-#     # @staticmethod               ##iT WILL BE DECORATER WHICH NOT REQUIRED ANY DETAILS
-#     def transport_info(self):
-#         return f"This is the Transportation service your manufactures is:- '{self.manufacturer}' and your engine type is '{self.engine_type}'"
+    # @staticmethod               ##iT WILL BE DECORATER WHICH NOT REQUIRED ANY DETAILS
+    def transport_info(self):
+        return f"This is the Transportation service your manufactures is:- '{self.manufacturer}' and your engine type is '{self.engine_type}'"
 
-# #Child Class
-# class car(Transport):
-#     def __init__(self,manuf,types,year) -> None:            ##Constructor
-#         super().__init__(manuf,types)                       ##Here we are using the parent constructor attributes
-#         self.year = year
+#Child Class
+class car(Transport):
+    def __init__(self,manuf,types,year) -> None:            ##Constructor
+        super().__init__(manuf,types)                       ##Here we are using the parent constructor attributes
+        self.year = year
         
-#     def car_dispaly(self):
-#         return f"->>>>>>>>>>{super().transport_info()} Manufacturer Year '{self.year}' "
+    def car_dispaly(self):
+        return f"->>>>>>>>>>{super().transport_info()} Manufacturer Year '{self.year}' "
     
 
 # ##creating the object for the class
