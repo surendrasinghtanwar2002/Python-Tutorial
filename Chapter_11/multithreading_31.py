@@ -14,7 +14,7 @@ def migration_function():
         print("Wait we are migrating your database from the Mumbai Region to Delhi Region")
         sleep(random.randint(6,7))
         print("Your data have been succesfuly migrated from one place to another region")
-        event.set()
+        event.set()                     ##Setting the event flag True
     except Exception as e:
         print(f"This is the exception of the function {e}")
 
