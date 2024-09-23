@@ -1,3 +1,5 @@
+                                                        ## In this section we will practise Multiple Inheritance in the python ##
+
 ## This is the first parent or base class
 class Country:
     def __init__(self) -> None:
