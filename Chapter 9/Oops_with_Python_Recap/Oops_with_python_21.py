@@ -1,5 +1,5 @@
                             ## In this section we will practise the hierarchical level of inheritance ##
-
+import os
 
 ##This is the base class or parent class
 class Netmiko_Connection:
@@ -40,9 +40,17 @@ class Backup_device(Netmiko_Connection):
             print("Sorry we are not able to backup up your device due to no netmiko connection object")
 
 
-##Creating the object or instance
+os.system("clear")
+
+##Creating the object or instance first
 taks1 = Backup_device()
 print(taks1.device_details())
 taks1.backup_device()
+
+##Creating the object or instance second
+print("Break Statement".center(140,"*"))
+task2 = Configuration_Device()
+print(task2.device_details())
+task2.send_commands()
 
 
