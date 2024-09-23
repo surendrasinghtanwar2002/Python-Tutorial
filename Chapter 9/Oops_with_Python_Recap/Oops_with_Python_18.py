@@ -1,6 +1,5 @@
                                                             ## Inheritance Chapter 6 ##
 
-
 class Netmiko_connection:               ##This is parent class
     def __init__(self) -> None:
         self.user_name = "static_username"
@@ -16,6 +15,8 @@ class Netmiko_connection:               ##This is parent class
 class Connection(Netmiko_connection):
     def __init__(self,name:str, password:str) -> None:
         super().__init__()
+        self.name = name
+        self.password = password
         self.status = True
         print("Connection Class is being called or child class")
 
