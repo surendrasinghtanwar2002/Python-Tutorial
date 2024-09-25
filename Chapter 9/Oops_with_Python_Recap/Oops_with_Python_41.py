@@ -34,3 +34,21 @@ class Clothes(Product):
     def order(self):
         print("The price of the clothing order will be presented here")
 
+def main():
+    t1 = Electronics()
+    t1.price()
+    t1.order()
+
+    t2 = Clothes()
+    t2.price()
+    t2.order()
+
+
+if __name__ == "__main__":
+    main()
+    
+
+
+
+
+
