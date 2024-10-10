@@ -1,33 +1,14 @@
-                                                                        ## In this section we will create a seperate jinja template and put the condition for generating the message ##
-
-##Importing the Jinja Module
 from jinja2 import Environment,FileSystemLoader
 
+##Creating the environment for the jinja templating 
+env = Environment(loader=FileSystemLoader("E:\\python_netmiko_project_practise\\templates\\"))
 
-##Details
-student_details = [
-    {"Student_Name":"Surendra Sing Tanwar","Mobile_No":558181891,"Score":80},
-    {"Student_Name":"Jackson","Mobile_No":123456789,"Score":89},
-    {"Student_Name":"Jeremy","Mobile_No":7987891651,"Score":65},
-    {"Student_Name":"Kevin","Mobile_No":61151817282,"Score":95},
-    {"Student_Name":"Olly","Mobile_No":73213132156156,"Score":99},
-]
+##Getting the template from the enivronment
+template = env.get_template("macro_2.txt")
 
-##Load the template 
-jinja_environment = Environment(loader=FileSystemLoader("/Users/surendrasingh/Desktop/Python-Tutorial/Chapter 15/templates/"))
+##Rendering the items as per the interface 
+dummy_data = {"interface":["Gig0/1","Gig0/2","Gig0/3","Gig0/4","Gig0/5"]}
 
-##Loading the tempalte from the folder mentioned above
-template = jinja_environment.get_template("student_template.txt")
+result = template.module.show_interface_status(dummy_data["interface"])
 
-##Iterate each and every line from the loop
-for student in student_details:
-    file_name = f"Student_{student['Student_Name']}.txt"            ##Specifying the file
-    data = template.render(student)        ##Rendering the items 
-
-    ##Creating file for specific data
-    with open(file_name,"w",encoding="utf-8") as message:
-        message.write(data)
-
-        print(f"File Wrote {file_name}")
-
-
+print(f"This is your result of the template {result}")

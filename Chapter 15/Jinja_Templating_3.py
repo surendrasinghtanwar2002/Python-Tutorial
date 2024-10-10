@@ -1,17 +1,18 @@
-##Importing the jinja modules 
-import jinja2
+from jinja2 import Environment,FileSystemLoader
 
-##Creating the Jinja environment object
-environment = jinja2.Environment()          
+##Creating the environment for the jinja
+env = Environment(loader=FileSystemLoader("E:\\python_netmiko_project_practise\\templates"))
 
-##Creating the template using  from string method
-template = environment.from_string("Hello Mr {{name}}")
+##Speciying the template for the configuration
+template = env.get_template("EIGRP_Interface_Configuration.txt")
 
-##Rendering the items
-template_output = template.render(name="Surendra")
+##Creating dummy data for the device
+device_data = {
+    "device_type":"router",
+    "interface":[("Gigabit_Ethernet0/0","192.168.1.100"),("Gigabit_Ethernet0/1","192.168.1.105"),("Gigabit_Ethernet0/2","192.168.1.110")],
+}
 
-##Printing the template output
-print(f"This is the output of template ------------------>{template_output}<----------------")
+##Rendering the template with data \
+result = template.render(device_type=device_data["device_type"],interface=device_data["interface"])
 
-
-
+print(f"This is the result of the template output --------> {result}")

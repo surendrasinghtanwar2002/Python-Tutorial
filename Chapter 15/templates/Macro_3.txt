@@ -1,0 +1,5 @@
+{%macro show_interface_status(interface, details = False)%}
+    {%-for intf in interface%}
+    show interface {{intf}} {% if details %} | include LineProtocol {%-endif-%}
+    {%endfor%}
+{%endmacro%}

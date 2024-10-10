@@ -1,22 +1,14 @@
 from jinja2 import Environment,FileSystemLoader
 
-Employee_Data = [
-    {"Employee_Name":"Surendra Singh Tanwar","test_case":"Python Module Re","score":80},
-    {"Employee_Name":"Harish Kumar","test_case":"Oops with Java","score":70},
-    {"Employee_Name":"Jackson","test_case":"Kali Linux Testing","score":95},
-    {"Employee_Name":"RamKrishna","test_case":"Web App Testing","score":40},
-    {"Employee_Name":"Murat Singh","test_case":"React Native","score":45}
-]
+##Create the jinja environment
+env = Environment(loader=FileSystemLoader("E:\\python_netmiko_project_practise\\templates\\"))
 
-##Creating the environment for the jinja
-environment = Environment(loader=FileSystemLoader("/Users/surendrasingh/Desktop/Python-Tutorial/Chapter 15/templates/"))
+##Loading the template inside the jinja templating 
+template = env.get_template('Macro_3.txt')
 
-##Loading the template
-template = environment.get_template("Employee_Template.txt")
+##rendering the items in the macro function using dummy data
+dummy_data = {"interface":["Gigabit_Ethernet0/0","Ethernet0/0","Serial_Link0/0","Fast_Ethernet0/0"]}
 
-##Iterating data from the list 
-for employee in Employee_Data:
-    data = template.render(employee)
+result = template.module.show_interface_status(interface= dummy_data["interface"],details = True)
 
-    print(f"This is your actual data of the template------------------------>\n {data}")
-
+print(f"This is the result of the template --------------> {result} <--------------")

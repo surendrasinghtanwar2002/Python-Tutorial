@@ -1,0 +1,9 @@
+{% if device_type | lower == "router" -%}
+{% if interface is string %}
+interface {{interface}}
+{% elif interface is iterable %}
+{%- for intf, ip_address in interface %}
+interface {{intf}} {{ip_address}}
+{%- endfor %}
+{% endif %}
+{%- endif %}
