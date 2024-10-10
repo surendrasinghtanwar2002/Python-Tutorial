@@ -1,0 +1,43 @@
+{% macro eigrp_specific_configuration(device) %}
+    {%- if device.maximum_hops -%}
+        metric maximum-hops {{ device.maximum_hops }}
+    {% endif %}
+{% endmacro %}
+
+{% macro ospf_specific_configuration(device) %}
+    {# In this specific ospf configuration will be done #}
+    {% endmacro %}
+
+{% macro rip_specific_configuration(device) %}
+    {# In this specific rip configuration will be done #}
+    {% endmacro %}
+
+{% macro bgp_specific_configuration(device) %}
+    {# In this specific bgp configuration will be done #}
+    {% endmacro %}
+
+{% macro routing_configuration(device_details) %}
+    {%- if device_details.devices is iterable -%}
+        {%- for device in device_details.devices -%}
+            {%- if device.hostname -%}
+                hostname {{ device.hostname }} 
+            {% endif %}
+            router {{ device.routing_protocol }} 
+            {%- if device.routing_protocol | lower == "ospf" -%} 
+                {{ device.ospf_area_id }} 
+                {{ospf_specific_configuration(device)}}     {# Call the OSPF Macro here #}
+            {%- elif device.routing_protocol | lower == "eigrp" -%} 
+                {{ device.as_number }} 
+                {{ eigrp_specific_configuration(device) }}  {# Call the EIGRP macro here #}
+            {%- elif device.routing_protocol | lower == "bgp" -%} 
+                {{ device.asn }}
+                {{ bgp_specific_configuration(device)}}     {# Call the BGP macro here #}
+            {%- elif device.routing_protocol | lower == "rip" -%} 
+                {{rip_specific_configuration(device)}}      {# Call the eigrp_specific_configuration #}
+            {% endif %}
+            {%- if device.router_id -%} 
+                router_id {{ device.router_id }} 
+            {% endif %}
+        {%- endfor -%}
+    {%- endif -%}
+{% endmacro %}

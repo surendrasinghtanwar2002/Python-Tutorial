@@ -1,0 +1,11 @@
+Hello {{Student_Name}}, 
+                        {% if Score >= 80 %}
+                        "I am happy to inform you that your result is in top list student and we appreciate your hardwork. Your result is {{Score}}
+
+                        {% else %}
+                        "Sorry your result is not in the top list student and we also appreciate your hardwork but try more hard. Your result is {{Score}}
+
+                        {% endif %}
+
+                See You tomorrow
+                    Principal

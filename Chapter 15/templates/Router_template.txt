@@ -1,0 +1,5 @@
+{% if device_type == "router" %}
+hostname {{hostname}}
+interface Loopback 1
+  ip address {{loopack_ip}} 255.255.255.255
+{% endif %}

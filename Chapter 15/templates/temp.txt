@@ -1,0 +1,43 @@
+{% macro device_configuration(device_details) %}
+
+{% if device_details.devices is iterable %}
+    {% for device in device_details.devices %}
+        {% if device.device_type | lower == "router" %}
+            {% if device.hostname %}hostname {{ device.hostname }}{% endif %}
+            {% if device.routing_protocol %}
+                router {{ device.routing_protocol }}
+                {% if device.routing_protocol | lower == "ospf" %}
+                    {{ device.area_number }}
+                {% elif device.routing_protocol | lower == "rip" %}
+                    {% endif %}
+                {% elif device.routing_protocol | lower == "eigrp" %}
+                    {{ device.as_number }}
+                {% endif %}
+            {% endif %}
+            {% if device.interfaces is iterable %}
+                {% for intf in device.interfaces %}
+                    interface {{ intf.name }}
+                    ip address {{ intf.ip_address }} {{ intf.subnet_mask }}
+                    no shut
+                {% endfor %}
+            {% elif device.interfaces is string %}
+                interface {{ device.interfaces.name }}
+                ip address {{ device.interfaces.ip }} {{ device.interfaces.subnet_mask }}
+                no shut
+            {% endif %}
+        {% elif device.device_type | lower == "switch" %}
+            {% if device.hostname %}hostname {{ device.hostname }}{% endif %}
+            {% if device.vlans is iterable %}
+                {% for vlan in device.vlans %}
+                    vlan {{ vlan.vlan_id }}
+                    name My_vlan {{ vlan.vlan_name }}
+                {% endfor %}
+            {% elif device.vlans is string %}
+                vlan {{ device.vlans.vlan_id }}
+                name My_vlan {{ device.vlans.vlan_name }}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% endmacro %}

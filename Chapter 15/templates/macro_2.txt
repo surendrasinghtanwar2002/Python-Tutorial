@@ -1,0 +1,9 @@
+{% macro show_interface_status(interface)%}
+    {%- if interface is string %}
+    show interface {{interface}} status
+    {%- else %}
+    {%-for intf in interface -%}
+    show interface {{intf}} status
+    {%-endfor%}
+    {%-endif%}
+{% endmacro %}

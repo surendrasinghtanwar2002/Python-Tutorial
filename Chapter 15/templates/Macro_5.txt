@@ -1,0 +1,31 @@
+{% macro routing_configuration(device_details) -%}
+    {% if device_details.devices is iterable -%}
+        {% for device in device_details.devices -%}
+            {% if device.device_type | lower == "router" -%}
+                {%- if device.hostname -%}
+hostname {{ device.hostname }}{% endif %}
+                {%- if device.routing_protocol -%}
+router {{ device.routing_protocol }}{% endif %}
+                
+                {# Handle specific routing protocols #}
+                {% if device.routing_protocol | lower == "ospf" -%}
+{{ device.ospf_area_id }}
+                {% elif device.routing_protocol | lower == "eigrp" -%}
+{{ device.as_number }}
+                {% elif device.routing_protocol | lower == "rip" -%}
+                {# No additional parameters for RIP #}
+                {% endif %}
+                
+                {%- if device.router_id -%}
+router-id {{ device.router_id }}{% endif %}
+                
+                {# Check for networks, single or multiple #}
+                {% if device.networks is iterable -%}
+                    {% for network in device.networks -%}
+network {{ network.ip_address }} {{ network.wildcard_mask }}{% endfor %}
+                {% elif device.network is tuple -%}
+network {{ device.network[0] }} {{ device.network[1] }}{% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endmacro %}

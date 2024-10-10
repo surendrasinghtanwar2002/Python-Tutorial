@@ -1,0 +1,16 @@
+{% if device_type | lower == "router" -%}
+hostname {{hostname}}
+router {{routing_type | lower }} {%- if routing_type | lower == "eigrp" %} {{as_number}}
+{%- for network, wildcard_mask in network_list %}
+    network {{network}} {{wildcard_mask}}
+    {%- endfor %}
+  {%- elif routing_type | lower == "ospf" %}
+    {%- for network, wildcard_mask in network_list %}
+    network {{network}} {{wildcard_mask}} area {{area_number}}
+    {%- endfor %}
+  {%- else %}
+    {%- for network, wildcard_mask in network_list %}
+    network {{network}} {{wildcard_mask}}
+    {%- endfor %}
+  {%- endif %}
+{%- endif %}

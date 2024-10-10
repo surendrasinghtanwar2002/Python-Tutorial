@@ -1,0 +1,7 @@
+Hello Mr {{Employee_Name}}
+
+Good Morning,
+              Your test case {{test_case}} result is {{score}}. {% if score >=80 %} Congratulation you have won the test case. {% else %} Better luck next time {% endif %}
+
+              ^ See you Tommorow ^
+
